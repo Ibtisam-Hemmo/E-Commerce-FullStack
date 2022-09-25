@@ -1,2 +1,2 @@
-# BIKA-MERCE-
+# BIKA-MERCE
 E-Commerce App PERN STACK 
