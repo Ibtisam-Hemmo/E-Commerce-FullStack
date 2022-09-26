@@ -1,12 +1,13 @@
 import './App.css';
-import Axios from 'axios'
+import Axios from 'axios';
+
 function App() {
   Axios('/data')
     .then((data) => console.log(data.data))
-    .catch(console.log)
+    .catch(console.log);
   return (
     <div className="App">
-khbj,
+      khbj,
     </div>
   );
 }
