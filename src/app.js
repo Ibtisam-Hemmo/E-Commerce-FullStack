@@ -15,9 +15,11 @@ app.use(compression());
 app.use(cookieParser());
 app.disable('x-powered-by');
 
-app.use(express.static(join(__dirname, '..', 'client')));
-
 // app.use(router);
+
+if(NODE_ENV=='production'){
+    app.use(express.static(join(__dirname, '..', 'client', 'build')));
+}
 app.get('/data', (req, res)=>{
     res.send({a: 'jk'})
 })
