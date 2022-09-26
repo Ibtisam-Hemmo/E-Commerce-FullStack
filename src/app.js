@@ -6,6 +6,8 @@ const cookieParser = require('cookie-parser');
 require('env2')('.env');
 const router = require('./routes');
 
+
+
 const app = express();
 app.set('port', process.env.PORT || 5000);
 
@@ -19,6 +21,7 @@ app.use(router);
 app.get('/data', (req, res) => {
   res.send({ a: 'jk' });
 });
+
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(join(__dirname, '..', 'client', 'build')));

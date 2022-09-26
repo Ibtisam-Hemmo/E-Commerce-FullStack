@@ -7,10 +7,10 @@ const {
 
 let connectionString = '';
 let ssl = false;
-
 switch (NODE_ENV) {
   case 'development':
     connectionString = DEV_DB_URL;
+    console.log(connectionString, 111111);
     break;
   case 'production':
     connectionString = DATABASE_URL;
