@@ -17,7 +17,7 @@ app.disable('x-powered-by');
 
 // app.use(router);
 
-if(NODE_ENV=='production'){
+if(process.env.NODE_ENV=='production'){
     app.use(express.static(join(__dirname, '..', 'client', 'build')));
 }
 app.get('/data', (req, res)=>{
