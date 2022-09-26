@@ -4,7 +4,7 @@
   "description": "E-Commerce App PERN STACK",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=production node ./src",
+    "start": "npm run heroku-postbuild && cross-env NODE_ENV=production node ./src",
     "dev": "cross-env NODE_ENV=development nodemon ./src",
     "heroku-postbuild": "cd client && npm install && npm run build",
     "test": "cross-env NODE_ENV=test jest"
