@@ -1,0 +1,47 @@
+{
+  "name": "bika-merce-",
+  "version": "1.0.0",
+  "description": "E-Commerce App PERN STACK",
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node ./src",
+    "dev": "cross-env NODE_ENV=development nodemon ./src",
+    "test": "cross-env NODE_ENV=test jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CA-G12/BIKA-MERCE-.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CA-G12/BIKA-MERCE-/issues"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.0",
+    "cloudinary": "^1.31.0",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.6",
+    "cross-env": "^7.0.3",
+    "env2": "^2.2.2",
+    "express": "^4.18.1",
+    "form-data": "^4.0.0",
+    "formidable": "^1.1.1",
+    "joi": "^17.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.9.0",
+    "multer": "^1.4.5-lts.1",
+    "pg": "^8.8.0",
+    "tinify": "^1.6.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.23.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "jest": "^29.0.1",
+    "nodemon": "^2.0.19",
+    "supertest": "^6.2.4"
+  },
+  "homepage": "https://github.com/CA-G12/BIKA-MERCE-#readme"
+}
