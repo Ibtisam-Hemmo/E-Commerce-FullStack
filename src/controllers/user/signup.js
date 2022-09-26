@@ -1,9 +1,9 @@
 const { hash } = require('bcrypt');
 const { signUpSchema } = require('../../utils/validate');
-const CustomError = require('../../utils/CustomError')
+const CustomError = require('../../utils/CustomError');
 
 const signup = (req, res, next) => {
-    console.log('signup');
+  console.log('signup');
 };
 
 module.exports = signup;
