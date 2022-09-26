@@ -16,18 +16,18 @@ app.use(cookieParser());
 app.disable('x-powered-by');
 
 // app.use(router);
-
-if(process.env.NODE_ENV=='production'){
-    app.use(express.static(join(__dirname, '..', 'client', 'build')));
-}
-
-app.get('/*', (req, res)=>{
-    res.sendFile((join(__dirname, '..', 'client', 'public','index.html')));
-})
-
 app.get('/data', (req, res)=>{
     res.send({a: 'jk'})
 })
+
+if(process.env.NODE_ENV=='production'){
+    app.use(express.static(join(__dirname, '..', 'client', 'build')));
+    app.get('/*', (req, res)=>{
+        res.sendFile((join(__dirname, '..', 'client', 'build','index.html')));
+    })
+}
+
+
 
 app.use((err, req, res, next) => {
     console.log('Error Middlware:', err);
