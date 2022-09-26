@@ -3,6 +3,7 @@ require('env2')('.env');
 const CustomError = require('./CustomError');
 
 module.exports = generateToken = (payLoad) => new Promise((resolve, reject) => {
+
     sign(payLoad, process.env.SECRET_KEY, (err, token) => {
       if (err) {
         return reject(err);
@@ -11,3 +12,4 @@ module.exports = generateToken = (payLoad) => new Promise((resolve, reject) => {
       return resolve(token);
     });
   });
+

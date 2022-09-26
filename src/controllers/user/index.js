@@ -1,3 +1,9 @@
+
 const signup = require('./signup');
 
-module.export = { signup };
+const signin = require('./signin');
+
+module.exports = {
+  signin, signup
+};
+

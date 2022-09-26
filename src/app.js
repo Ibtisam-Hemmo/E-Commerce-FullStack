@@ -4,7 +4,10 @@ const express = require('express');
 const compression = require('compression');
 const cookieParser = require('cookie-parser');
 require('env2')('.env');
+
 const routeuserRouterr = require('./routes/userRoutes');
+
+
 
 const app = express();
 app.set('port', process.env.PORT || 5000);
@@ -16,10 +19,12 @@ app.use(cookieParser());
 app.disable('x-powered-by');
 
 
+
 app.use(routeuserRouterr);
 app.get('/data', (req, res) => {
   res.send({ a: 'jk' });
 });
+
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(join(__dirname, '..', 'client', 'build')));
