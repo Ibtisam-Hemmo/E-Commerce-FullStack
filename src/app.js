@@ -4,8 +4,7 @@ const express = require('express');
 const compression = require('compression');
 const cookieParser = require('cookie-parser');
 require('env2')('.env');
-
-const routeuserRouterr = require('./routes/userRoutes');
+const router = require('./routes');
 
 
 
@@ -18,9 +17,7 @@ app.use(compression());
 app.use(cookieParser());
 app.disable('x-powered-by');
 
-
-
-app.use(routeuserRouterr);
+app.use(router);
 app.get('/data', (req, res) => {
   res.send({ a: 'jk' });
 });
