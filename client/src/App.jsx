@@ -1,8 +1,8 @@
 import "./App.css";
-// import Axios from 'axios';
-import React from "react";
-import SignIn from "./components/Navbar/Signin";
-import Signup from "./components/Navbar/Signup";
+import React from 'react';
+import SignIn from './components/Navbar/Signin';
+import Signup from './components/Navbar/Signup';
+import FilterBar from './components/Products/Sidebar';
 import Cart from "./components/Cart/Cart";
 
 function App() {
@@ -11,6 +11,7 @@ function App() {
     <div className="App">
       <Signup />
       <SignIn />
+      <FilterBar />
       <Cart />
     </div>
   );
