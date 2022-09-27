@@ -1,9 +1,9 @@
 const connection = require('../config/connection');
 
-const addUser = ({ username, Email, img }, hash) => {
+const addUser = ({ name, email, img }, hash) => {
   const sql = {
     text: 'INSERT INTO users(name, email, img, password) VALUES($1, $2, $3, $4) RETURNING *',
-    values: [username, Email, img, hash],
+    values: [name, email, img, hash],
   };
   return connection.query(sql);
 };

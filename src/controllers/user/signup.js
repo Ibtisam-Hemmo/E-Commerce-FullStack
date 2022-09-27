@@ -7,7 +7,7 @@ const generateToken = require('../../utils/generateToken');
 const signup = (req, res, next) => {
   console.log('from signup');
   const {
-    username, email, img, password, confirmPassword,
+    name, email, img, password, confirmPassword,
   } = req.body;
   signUpSchema
     .validateAsync(req.body)
