@@ -1,9 +1,9 @@
-import './App.css';
+import "./App.css";
 // import Axios from 'axios';
-import React from 'react';
-import SignIn from './components/Navbar/Signin';
-import Signup from './components/Navbar/Signup';
-import Cart from './components/Cart/Cart';
+import React from "react";
+import SignIn from "./components/Navbar/Signin";
+import Signup from "./components/Navbar/Signup";
+import Cart from "./components/Cart/Cart";
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <Signup />
       <SignIn />
-      <Cart/>
+      <Cart />
     </div>
   );
 }
