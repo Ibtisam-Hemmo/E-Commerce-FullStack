@@ -2,14 +2,15 @@ const { getFilteredProducts } = require('../../database/quiries');
 
 const getProducts = (req, res, next) => {
   let {
-    name, minPrice, maxPrice, category,
+    search, category, minPrice, maxPrice, a,
   } = req.body;
-  name = name.trim();
-  name = `%${name}%`;
+  if (category === 'all') category = '';
+  search = search.trim();
+  search = `%${search}%`;
   category = category.trim();
   category = `%${category}%`;
 
-  getFilteredProducts(name, minPrice, maxPrice, category)
+  getFilteredProducts(search, minPrice, maxPrice, category, a)
     .then((data) => res.send(data))
     .catch(console.log);
 };
