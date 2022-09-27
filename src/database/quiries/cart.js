@@ -11,10 +11,11 @@ const deleteSingleProduct = (id) => {
 };
 
 const updateCount = ({ num, cart_id }) => connection
-  .query(`update cart set count = $1 where cart.id = $2 returning count`, [num, cart_id]);
+  .query(`update cart set count = $1 where id = $2 returning *` [num, cart_id]);
 
 module.exports = {
   getProdcutsFromCart,
   deleteSingleProduct,
   updateCount,
 };
+
