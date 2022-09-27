@@ -1,12 +1,16 @@
-const { hash } = require('bcrypt');
+const { hash } = require('bcryptjs');
 const { signUpSchema } = require('../../utils/validate');
-const CustomError = require('../../utils/CustomError')
+const { addUser, userByEmail } = require('../../database/quiries');
+const CustomError = require('../../utils/CustomError');
+const generateToken = require('../../utils/generateToken');
 
 const signup = (req, res, next) => {
+
   const {
     username, email, img, password, confirmPassword,
   } = req.body;
-  signUpSchema.validateAsync(req.body)
+  signUpSchema
+    .validateAsync(req.body)
     .then(() => userByEmail(email))
     .then((rows) => {
       if (rows.rowCount) {
@@ -16,12 +20,12 @@ const signup = (req, res, next) => {
     })
     .then((pass) => hash(pass, 10))
     .then((hashing) => addUser(req.body, hashing))
-    .then((data) => {
-      const { id } = data.rows[0];
-      const { user_name } = data.rows[0];
-      return generateToken({ id, username: user_name });
-    })
     .then((token) => res.status(201)
+      const { name } = data.rows[0];
+      return generateToken({ id, username: name });
+    })
+    .then((token) => res
+      .status(201)
       .cookie('token', token, { httpOnly: true })
       .json({ message: 'Success', status: 201 }))
     .catch((err) => {

@@ -17,6 +17,7 @@ app.disable('x-powered-by');
 
 app.use(router);
 
+
 if(process.env.NODE_ENV=='production'){
     app.use(express.static(join(__dirname, '..', 'client', 'build')));
     app.get('/*', (req, res)=>{
@@ -26,12 +27,19 @@ if(process.env.NODE_ENV=='production'){
 
 
 
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(join(__dirname, '..', 'client', 'build')));
+  app.get('/*', (req, res) => {
+    res.sendFile((join(__dirname, '..', 'client', 'build', 'index.html')));
+  });
+}
+
 app.use((err, req, res, next) => {
-    console.log('Error Middlware:', err);
-    if (err.status) {
-        return res.json({ msg: err.msg, status: err.status })
-    }
-    return res.status(500).send('server error');
+  console.log('Error Middlware:', err);
+  if (err.status) {
+    return res.json({ msg: err.msg, status: err.status });
+  }
+  return res.status(500).send('server error');
 });
 
 module.exports = app;

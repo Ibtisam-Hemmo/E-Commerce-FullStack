@@ -7,7 +7,10 @@
     "start": "cross-env NODE_ENV=production node ./src",
     "dev": "cross-env NODE_ENV=development nodemon ./src",
     "heroku-postbuild": "cd client && npm install && npm run build",
-    "test": "cross-env NODE_ENV=test jest"
+    "test": "cross-env NODE_ENV=test jest",
+    "lint": "eslint src/** --fix",
+    "lint-fix": "npm run lint --fix",
+    "lint:client": "cd client && npm run lint"
   },
   "repository": {
     "type": "git",
@@ -37,7 +40,7 @@
     "tinify": "^1.6.1"
   },
   "devDependencies": {
-    "eslint": "^8.23.0",
+    "eslint": "^8.24.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0",
     "jest": "^29.0.1",
