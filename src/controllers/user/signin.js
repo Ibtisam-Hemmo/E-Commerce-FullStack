@@ -1,7 +1,7 @@
 const { compare } = require('bcryptjs');
 // const { signInSchema } = require('../../utils/validate');
 // const CustomError = require('../../utils/CustomError');
-const { userByEmail } = require('../../database/queries/user');
+const { userByEmail } = require('../../database/quiries');
 const generateToken = require('../../utils/generateToken');
 
 const signin = (req, res, next) => {
