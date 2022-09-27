@@ -5,12 +5,13 @@ const CustomError = require('../../utils/CustomError');
 const generateToken = require('../../utils/generateToken');
 
 const signup = (req, res, next) => {
-
+  console.log('from signup');
   const {
     username, email, img, password, confirmPassword,
   } = req.body;
   signUpSchema
     .validateAsync(req.body)
+
     .then(() => userByEmail(email))
     .then((rows) => {
       if (rows.rowCount) {
@@ -20,7 +21,8 @@ const signup = (req, res, next) => {
     })
     .then((pass) => hash(pass, 10))
     .then((hashing) => addUser(req.body, hashing))
-    .then((token) => res.status(201)
+    .then((data) => {
+      const { id } = data.rows[0];
       const { name } = data.rows[0];
       return generateToken({ id, username: name });
     })
