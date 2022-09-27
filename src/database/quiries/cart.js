@@ -5,6 +5,10 @@ const getProdcutsFromCart = (user_id) => {
   return connection.query(sql, [user_id]);
 };
 
+const updateCount = ({ num, cart_id }) => connection
+  .query(`update cart set count = $1 where cart.id = $2 returning count`, [num, cart_id]);
+
 module.exports = {
   getProdcutsFromCart,
+  updateCount,
 };
