@@ -1,7 +1,8 @@
-const cartRouter = require('express').Router();
+const cartRouter = require("express").Router();
 
-const { getProductsCart } = require('../controllers/cart');
+const { getProductsCart, deleteProductById } = require("../controllers/cart");
 
-cartRouter.get('/api/v1/cart/get-product', getProductsCart);
+cartRouter.get("/api/v1/cart/get-product", getProductsCart);
+cartRouter.post("/api/v1/cart/delete-product", deleteProductById);
 
 module.exports = cartRouter;
