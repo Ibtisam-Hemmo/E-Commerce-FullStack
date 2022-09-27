@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Axios from "axios";
+import axios from "axios";
 
 function Cart() {
   const [cartProducts, setCartProducts] = useState([]);
@@ -8,7 +9,15 @@ function Cart() {
       setCartProducts(products.data)
     );
   }, []);
-  return <div>{console.log(cartProducts)}</div>;
+  const deleteSingleProduct = () => {
+    axios.post("/api/v1/cart/delete-product", { id: 1 });
+  };
+  return (
+    <div>
+      <button onClick={deleteSingleProduct}>delete</button>
+      {console.log(cartProducts)}
+    </div>
+  );
 }
 
 export default Cart;
