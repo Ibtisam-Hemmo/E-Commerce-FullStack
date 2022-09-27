@@ -27,7 +27,8 @@ CREATE TABLE cart(
     FOREIGN KEY (product_id) REFERENCES products(id)
 );
 
- insert into users (name,email, password , img ) values ('userName','user@gmail.com','123456789','https://196034-584727-raikfcquaxqncofqfm.stackpath…oads/2019/07/Personal-Assistant-profile-photo.jpg');
+ insert into users (name,email, password , img ) values ('userName','user11@gmail.com','123456789','https://196034-584727-raikfcquaxqncofqfm.stackpath…oads/2019/07/Personal-Assistant-profile-photo.jpg'),
+ ('userName','user@gmail.com','123456789','https://196034-584727-raikfcquaxqncofqfm.stackpath…oads/2019/07/Personal-Assistant-profile-photo.jpg');
 -- INSERT INTO users (name, email, password, img) VALUES
 -- ("name","userName@gmail.com","123456789","https://196034-584727-raikfcquaxqncofqfm.stackpath…oads/2019/07/Personal-Assistant-profile-photo.jpg");
 
@@ -56,6 +57,6 @@ INSERT INTO products(name, description, img, price, category, user_id) VALUES
 ;
 
 INSERT INTO cart(user_id, product_id,count) VALUES
-(1,2, 1);
+(1,2, 1),(2,2,2);
 
 COMMIT;

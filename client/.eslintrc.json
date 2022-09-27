@@ -5,10 +5,10 @@
     },
     "extends": [
         "plugin:react/recommended",
-        "airbnb"
+        "airbnb",
+        "prettier"
     ],
-    "overrides": [
-    ],
+    "overrides": [],
     "parserOptions": {
         "ecmaVersion": "latest",
         "sourceType": "module"
@@ -17,6 +17,7 @@
         "react"
     ],
     "rules": {
+        "prettier/prettier": "error"
     },
     "root": true
 }
