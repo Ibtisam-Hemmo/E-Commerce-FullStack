@@ -1,38 +1,391 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Cairo&family=IBM+Plex+Sans:wght@500&family=Courgette&family=Poppins:wght@200;300;400&family=Roboto&family=Roboto+Slab&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    font-family: 'Poppins', 'Courier New', Courier, monospace;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root{
+    /* #d35e5e */
+    --foshia: #75a1b6;
+    --orange: orange
+    --grey: #a8a8ab;
+    --dark-grey: #bababa;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Start Styling NavBar */
+header {
+    padding: 10px 4%;
+    background-color: var(--foshia);
+    color: white;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+img.middle {
+    position: absolute;
+    top: 0;
+    height: 200px;
+    z-index: 1;
+    right: 45%;
+}
+
+img.logo {
+    height: 50px;
+}
+
+ul.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.btn {
+    background-color: orange;
+    color: white;
+    padding: 5px 17px;
+    border: none;
+    border-radius: 13px;
+}
+/* End Styling NavBar */
+
+/* Start Styling landing Section */
+
+section.landing {
+    background-color: var(--foshia);
+    color: white;
+    padding: 5% 4%;
+    display: flex;
+    align-items: center;
+    height: 60vh;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.landing-content {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+}
+
+.living-h1{
+    color: orange
+}
+
+img.landing-img {
+    height: 500px;
+    position: absolute;
+    width: 577px;
+    top: 74px;
+    right: 57px;
+}
+
+h1.landing-headline {
+    font-size: 50px;
+}
+
+p.landing-para {
+    font-size: 18px;
+    max-width: 500px;
+    color: var(--grey);
+}
+
+button.btn.buy-btn {
+    padding: 11px 50px;
+    border-radius: 40px;
+}
+
+/* End Styling landing Section */
+
+
+/* Start Styling Products Section */
+section.products-list {
+    padding: 7% 4%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 26px;
+    margin-bottom: 30px;
+}
+
+img.product-img {
+    background-color: #d3d3d330;
+    height: 315px;
+    width: 301px;
+    border-radius: 19px;
+}
+
+.product-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+p.product-title {
+    color: #646363;
+    font-size: 18px;
+}
+
+.product-cards-btns {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+button.icon {
+    padding: 6px;
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 6px;
+}
+/* End Styling Products Section */
+
+/* Start Styling Footer */
+footer {
+    padding: 5% 5%;
+    background-color: var(--foshia);
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer h1 {
+    font-size: 25px;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer ul li {
+    margin-bottom: 11px;
+}
+
+button.subscribe {
+    background-color: white;
+    padding: 10px 39px;
+    font-size: 18px;
+    border: none;
+    border-radius: 16px;
+}
+
+button.subscribe:hover{
+    transform: scale(1.1);
+}
+/* End Styling Footer */
+
+
+
+.pop-container {
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 14%;
+    right: 18%;
+    width: 61vw;
+    height: 69vh;
+    z-index: 5;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff20;
+    -webkit-backdrop-filter: blur(.3rem);
+    backdrop-filter: blur(.3rem);
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  img.book-img {
+    width: 350px;
+    height: 426px;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .pop-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 425px;
+    padding: 3%;
+    margin-left: 55px;
   }
+  
+  h1.book-title {
+    color: var(--navy);
+    font-size: 24px;
+    margin-top: 14px;
+    margin-bottom: 20px;
+  }
+  
+  p.book-author {
+    margin-bottom: 17px;
+    color: var(--brown);
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  ul.stars {
+    display: flex;
+    list-style: none;
+    gap: 8px;
+    font-size: 20px;
+    color: var(--orange);
+  }
+  
+  p.book-desc {
+    color: var(--navy);
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 27px;
+    line-height: 30px;
+  }
+
+
+/* Start Styling Login Pop Up */
+.login-form, #signup-form{
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    flex-direction: column;
+    top: 14%;
+    right: 18%;
+    width: 61vw;
+    height: 69vh;
+    z-index: 5;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff5c;
+    -webkit-backdrop-filter: blur(.3rem);
+    backdrop-filter: blur(.3rem);
+}
+
+.signup{
+    padding: 6px 8px 14px;
+    right: 18%;
+    width: 61vw;
+    height: auto;
+    top: 11px;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+.login-form, .signup-form{
+    text-align: center;
+    border: none;
+    
+}
+
+.form-body{
+    padding: 50px 25px 29px;
+    width: 350px;
+}
+
+.title{
+    color: orange;
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin: 0 0 60px;
+}
+
+.form-group{
+    text-align: left;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.input-icon{
+    color: #777;
+    font-size: 18px;
+    transform: translateY(-50%);
+    position: absolute;
+    top: 50%;
+    left: 20px;
+}
+
+.form-control{
+    font-size: 17px;
+    height: 45px;
+    width: 80%;
+    padding: 6px 0 6px 50px;
+    margin: 0 auto;
+    border: 2px solid #eee;
+    border-radius: 5px;
+    box-shadow: none;
+    outline: none;
+}
+
+.form-control::placeholder{
+    color: #AEAFB1;
+}
+
+.btn{
+    padding: 8px 15px;
+    background-color: orange;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    border: none;
+}
+/* End Styling Login Pop Up */
+.pagenation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 18px;
+}
+.pagenation button{
+    margin:5px;
+    padding: 10px 15px;
+        background-color: var(--foshia);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+}
+.filters{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+
+}
+.filters input:first-child{
+    padding: 5px;
 }
