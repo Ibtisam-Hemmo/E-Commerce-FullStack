@@ -1,3 +1,4 @@
 const getProducts = require('./getProducts');
+const addToCartCon = require('./addToCart')
 
-module.exports = getProducts;
+module.exports = {getProducts, addToCartCon};

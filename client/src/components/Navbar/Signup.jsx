@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import Axios from "axios";
+import SignUpForm from "./SignUpForm";
 
-const signUp = () => {
+const SignUp = () => {
   const [showForm, setShowForm] = useState(false);
   const [userData, setUserData] = useState({
     name: "",
@@ -34,86 +35,48 @@ const signUp = () => {
   const signUpRef = useClickOutside(() => setShowForm(false));
   const sendData = (e) => {
     e.preventDefault();
-    Axios.post("/api/v1/users/signup", userData).then((res) => {
-      if (res.data.msg) {
-        console.log(res.data.msg);
-      } else {
-        window.location.href = "/";
+    if(userData.email && userData.confirmPassword && userData.img && userData.name && userData.password){
+      if(userData.confirmPassword === userData.password){
+        Axios.post("/api/v1/users/signup", userData)
+        .then((res) => {
+          if (res.data.msg) {
+          swal({
+            title: '',
+            text: res.data.msg,
+            icon: 'warning',
+            button: 'OK',
+          }) 
+          } else {
+            window.location.href = "/";
+          }
+        });
+      } else{
+        swal({
+            title: '',
+            text: 'Password and Confirm Password have to be matching',
+            icon: 'warning',
+            button: 'OK',
+          })
       }
-    });
+    } else {
+      swal({
+          title: '',
+          text: 'You have to fill all Inputs to sign Up',
+          icon: 'warning',
+          button: 'OK',
+        })
+    }
   };
   return (
-    <div ref={signUpRef}>
-      <button onClick={handleForm} type="submit">
+    <li className="nav-list-item" ref={signUpRef}>
+      <button onClick={handleForm} type="submit" className="nav-item btn">
         Sign Up
       </button>
       {showForm && (
-        <form>
-          <label htmlFor="name">
-            Name:
-            <input
-              type="text"
-              name="name"
-              value={userData.name}
-              onChange={(e) =>
-                setUserData((prev) => ({ ...prev, name: e.target.value }))
-              }
-            />
-          </label>
-          <label htmlFor="email">
-            Email:
-            <input
-              type="email"
-              name="email"
-              value={userData.email}
-              onChange={(e) =>
-                setUserData((prev) => ({ ...prev, email: e.target.value }))
-              }
-            />
-          </label>
-          <label htmlFor="image">
-            Image:
-            <input
-              type="text"
-              name="image"
-              value={userData.img}
-              onChange={(e) =>
-                setUserData((prev) => ({ ...prev, img: e.target.value }))
-              }
-            />
-          </label>
-          <label htmlFor="password">
-            Password:
-            <input
-              type="password"
-              name="password"
-              value={userData.password}
-              onChange={(e) =>
-                setUserData((prev) => ({ ...prev, password: e.target.value }))
-              }
-            />
-          </label>
-          <label htmlFor="confirmPassword">
-            confirmPassword:
-            <input
-              type="password"
-              name="confirmPassword"
-              value={userData.confirmPassword}
-              onChange={(e) =>
-                setUserData((prev) => ({
-                  ...prev,
-                  confirmPassword: e.target.value,
-                }))
-              }
-            />
-          </label>
-          <button type="submit" onClick={sendData}>
-            Submit
-          </button>
-        </form>
+       <SignUpForm userData ={userData} setUserData ={setUserData} sendData={sendData}/>
       )}
-    </div>
+    </li>
   );
 };
 
-export default signUp;
+export default SignUp;
