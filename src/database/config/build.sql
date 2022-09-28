@@ -29,13 +29,11 @@ CREATE TABLE cart(
 
  insert into users (name,email, password , img ) values ('userName','user11@gmail.com','123456789','https://196034-584727-raikfcquaxqncofqfm.stackpath…oads/2019/07/Personal-Assistant-profile-photo.jpg'),
  ('userName','user@gmail.com','123456789','https://196034-584727-raikfcquaxqncofqfm.stackpath…oads/2019/07/Personal-Assistant-profile-photo.jpg');
--- INSERT INTO users (name, email, password, img) VALUES
--- ("name","userName@gmail.com","123456789","https://196034-584727-raikfcquaxqncofqfm.stackpath…oads/2019/07/Personal-Assistant-profile-photo.jpg");
 
 INSERT INTO products(name, description, img, price, category, user_id) VALUES
 ('Midtown Dining Set','Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequaturanimi ut laborum illo quaerat','https://ak1.ostkcdn.com/images/products/30884162/Tara-Pantry-23.75-W-x-15-D-x-67.75-H-13ee0613-545d-4f03-807f-0e5cd67d5da5_1000.jpg',100, 'Kitchen',1),
 
-('Midtown Dining Set','Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequaturanimi ut laborum illo quaerat','https://ak1.ostkcdn.com/images/products/30884162/Tara-Pantry-23.75-W-x-15-D-x-67.75-H-13ee0613-545d-4f03-807f-0e5cd67d5da5_1000.jpg',100, 'Kitchen',1),
+('Space Saving Shapes','Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequaturanimi ut laborum illo quaerat','https://ak1.ostkcdn.com/wp-content/uploads/2019/03/031519-Small-Kitchen-and-Dining-Tables-and-Chairs-Small-Spaces-Tall-Tables.jpg',100, 'Kitchen',1),
 
 ('gress chair','Data Chair is a system of chairs that can be assembled on different base typologies: sled, four legs, central support with or without wheels. Because of the Data Chair many configurations, its solid build and its lightweight appearance, it is a project with appeal unrivaled for furnishing collective spaces, public spaces, work places and homes.',
 'https://m.media-amazon.com/images/I/91C6rnYVi-L._AC_SL1500_.jpg', 70,'chair',1),
@@ -53,10 +51,21 @@ INSERT INTO products(name, description, img, price, category, user_id) VALUES
 
 ('Garden chair','With a serene, light and subtle character, the Stamp collection brings an air of differentiation, authenticity and originality to architectural and interior design projects.The collection is a complete family of upholstered seats, composed of chairs, armchairs and stools that blend in naturally in public, professional and residential surroundings. Clean-lined, contemporary and timeless pieces that infuse a sophisticated mood in the places they inhabit. Creating visual levity. Its elegant and austere outline embraces an elaborate interior with a soft upholstery that invites the body to relax and put the mind to work. Conversations flow wrapped in the fusion of aesthetics and comfort. Greater versatility using fewer materials.','https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGNoYWlyfGVufDB8fDB8fA%3D%3D&w=1000&q=80',9,'chair',1),
 
-('Bonta chair','Award winning stacking chair with the simplicity of form and function essential for any environment. Aluminum, anodized or powder coated; seat and back in recyclable polypropylene. The chair is perfect for indoor or outdoor.','https://image.shutterstock.com/image-photo/vintage-armchair-on-dark-background-600w-1087425731.jpg',62,'chair',1)
+('Bonta chair','Award winning stacking chair with the simplicity of form and function essential for any environment. Aluminum, anodized or powder coated; seat and back in recyclable polypropylene. The chair is perfect for indoor or outdoor.','https://image.shutterstock.com/image-photo/vintage-armchair-on-dark-background-600w-1087425731.jpg',62,'chair',1),
+
+('Ranges & Ovens','Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequaturanimi ut laborum illo quaerat','https://ak1.ostkcdn.com/img/mxc/03232020-gnp-kitchendining-PopCat_7.jpg',90, 'Kitchen',1),
+('Cookware','Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequaturanimi ut laborum illo quaerat','https://ak1.ostkcdn.com/img/mxc/03242022_SPRING2022_KITCHEN_PopCat_3.jpg',41, 'Kitchen',1),
+('Table Linens & Decor - Overstock','Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequaturanimi ut laborum illo quaerat','https://ak1.ostkcdn.com/img/mxc/12202021_WINTER2022_KITCHEN_PopCat_7_TableLinensandDecor.jpg',50, 'Kitchen',1),
+('Kitchen Electric Ice Maker ','Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequaturanimi ut laborum illo quaerat','https://ak1.ostkcdn.com/img/mxc/03232020-gnp-kitchendining-PopCat_8.jpg',90, 'Kitchen',1),
+('Bar','Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequaturanimi ut laborum illo quaerat','https://ak1.ostkcdn.com/img/mxc/07062022_SUMMER_Kitchen_688x444_BG01.jpg',100, 'Kitchen',1),
+('Glasses & Barware','Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequaturanimi ut laborum illo quaerat','https://ak1.ostkcdn.com/img/mxc/12202021_WINTER2022_KITCHEN_PopCat_8_GlassesandBarware.jpg',50, 'Kitchen',1)
+
 ;
 
 INSERT INTO cart(user_id, product_id, count) VALUES
-(1,2, 1),(2,2,2),(1,3, 7),(1,6,4),(1,5, 9),(1,2,4);
+(1,2, 1),(2,2,2),(1,3, 7),(1,6,4),(1,5, 9),(1,2,4),(3,6,55),(3,5, 9),(3,2,4);
+
+INSERT INTO cart(user_id, product_id, count) VALUES
+(3,6,55),(3,5, 9),(3,2,4);
 
 COMMIT;

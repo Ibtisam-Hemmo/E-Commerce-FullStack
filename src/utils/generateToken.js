@@ -4,7 +4,7 @@ const { sign } = require("jsonwebtoken");
 require("env2")(".env");
 const CustomError = require("./CustomError");
 
-module.exports = generateToken = (res, payload) => {
+module.exports = generateToken = (res, payload) =>
   sign(
     payload,
     process.env.SECRET_KEY,
@@ -17,4 +17,3 @@ module.exports = generateToken = (res, payload) => {
       }
     }
   );
-};

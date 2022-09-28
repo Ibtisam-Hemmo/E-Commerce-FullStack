@@ -29,7 +29,7 @@ app.use((err, req, res, next) => {
   if (err.status) {
     return res.json({ msg: err.msg, status: err.status });
   }
-  return res.status(500).send(err);
+  return res.status(500).send("Server Error: ", err);
 });
 
 module.exports = app;

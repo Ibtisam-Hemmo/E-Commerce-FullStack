@@ -5,10 +5,11 @@ const {
   updateCount,
 } = require("./cart");
 
-const getFilteredProducts = require("./products");
+const { getFilteredProducts, addToCart } = require("./products");
 
 module.exports = {
   getFilteredProducts,
+  addToCart,
   addUser,
   userByEmail,
   getProdcutsFromCart,

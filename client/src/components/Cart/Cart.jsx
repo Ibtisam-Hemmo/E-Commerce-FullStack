@@ -6,11 +6,8 @@ function Cart() {
   const [cartProducts, setCartProducts] = useState([]);
   useEffect(() => {
     axios("/api/v1/cart/get-product").then((products) => {
-      console.log(products);
-
-      setCartProducts(products.data)
-    }
-    );
+      setCartProducts(products.data);
+    });
   }, []);
 
   return (

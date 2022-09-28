@@ -5,24 +5,24 @@ const CustomError = require("../../utils/CustomError");
 const generateToken = require("../../utils/generateToken");
 
 const signup = (req, res, next) => {
-  console.log("from signup");
-  const { name, email, img, password, confirmPassword } = req.body;
+  const { email, password } = req.body;
   signUpSchema
     .validateAsync(req.body)
-
     .then(() => userByEmail(email))
-    .then((rows) => {
-      if (rows.rowCount) {
+    .then(({ rowCount }) => {
+      if (rowCount) {
         throw new CustomError("Email already Exists", 409);
       }
-      return password;
+      return hash(password, 10);
     })
-    .then((pass) => hash(pass, 10))
-    .then((hashing) => addUser(req.body, hashing))
-    .then((data) => {
-      const { id, name } = data.rows[0];
-      return generateToken({ id, name });
-    })
+    .then((hashedPass) => addUser(req.body, hashedPass))
+    .then(({ rows }) =>
+      generateToken({
+        id: rows[0].id,
+        img: rows[0].img,
+        name: rows[0].name,
+      })
+    )
     .then((token) =>
       res
         .status(201)
