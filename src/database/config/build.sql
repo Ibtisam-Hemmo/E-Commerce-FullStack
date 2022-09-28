@@ -56,7 +56,7 @@ INSERT INTO products(name, description, img, price, category, user_id) VALUES
 ('Bonta chair','Award winning stacking chair with the simplicity of form and function essential for any environment. Aluminum, anodized or powder coated; seat and back in recyclable polypropylene. The chair is perfect for indoor or outdoor.','https://image.shutterstock.com/image-photo/vintage-armchair-on-dark-background-600w-1087425731.jpg',62,'chair',1)
 ;
 
-INSERT INTO cart(user_id, product_id,count) VALUES
-(1,2, 1),(2,2,2);
+INSERT INTO cart(user_id, product_id, count) VALUES
+(1,2, 1),(2,2,2),(1,3, 7),(1,6,4),(1,5, 9),(1,2,4);
 
 COMMIT;

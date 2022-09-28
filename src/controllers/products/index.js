@@ -1,3 +1,3 @@
-const getProducts = require('./getProducts');
+const getProducts = require("./getProducts");
 
 module.exports = getProducts;

@@ -1,10 +1,8 @@
-const { getFilteredProducts } = require('../../database/quiries');
+const { getFilteredProducts } = require("../../database/quiries");
 
 const getProducts = (req, res, next) => {
-  let {
-    search, category, minPrice, maxPrice, a,
-  } = req.body;
-  if (category === 'all') category = '';
+  let { search, category, minPrice, maxPrice, a } = req.body;
+  if (category === "all") category = "";
   search = search.trim();
   search = `%${search}%`;
   category = category.trim();
