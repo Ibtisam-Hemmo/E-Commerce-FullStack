@@ -7,7 +7,6 @@ let connectionString = "";
 let ssl = false;
 switch (NODE_ENV) {
   case "development":
-    // connectionString = "postgres://kakashii:123456@localhost:5432/hataki";
     connectionString = DEV_DB_URL;
     break;
   case "production":

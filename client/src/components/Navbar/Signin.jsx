@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import Axios from "axios";
+import SignInForm from "./SignInForm";
 
 function SignIn() {
   const [showForm, setShowForm] = useState(false);
@@ -32,48 +33,35 @@ function SignIn() {
 
   const sendData = (e) => {
     e.preventDefault();
-    Axios.post("/api/v1/users/signin", userData).then((res) => {
-      if (res.data.msg) {
-        console.log(res.data.msg);
-      } else {
-        window.location.href = "/";
-      }
-    });
+    if (userData.email && userData.password) {
+      Axios.post("/api/v1/users/signin", userData).then((res) => {
+        if (res.data.msg) {
+          swal({
+            title: "",
+            text: res.data.msg,
+            icon: "warning",
+            button: "OK",
+          });
+        } else {
+          window.location.href = "/";
+        }
+      });
+    }
   };
 
   return (
-    <div ref={ref}>
-      <button onClick={handleForm} type="submit">
-        {" "}
+    <li className="nav-list-item" ref={ref}>
+      <button onClick={handleForm} type="submit" className="nav-item btn">
         Sign In
       </button>
       {showForm && (
-        <form action="">
-          <input
-            value={userData.email}
-            onChange={(e) =>
-              setUserData((prev) => ({ ...prev, email: e.target.value }))
-            }
-            type="text"
-          />
-          <input
-            value={userData.password}
-            onChange={(e) =>
-              setUserData((prev) => ({ ...prev, password: e.target.value }))
-            }
-            type="password"
-          />
-          <button
-            type="submit"
-            onClick={(e) => {
-              sendData(e);
-            }}
-          >
-            Submit
-          </button>
-        </form>
+        <SignInForm
+          userData={userData}
+          setUserData={setUserData}
+          sendData={sendData}
+        />
       )}
-    </div>
+    </li>
   );
 }
 

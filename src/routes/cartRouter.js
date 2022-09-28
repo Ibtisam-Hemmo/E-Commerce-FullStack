@@ -1,5 +1,4 @@
 const cartRouter = require("express").Router();
-
 const { getProductsCart, deleteProductById } = require("../controllers/cart");
 
 cartRouter.get("/api/v1/cart/get-product", getProductsCart);
