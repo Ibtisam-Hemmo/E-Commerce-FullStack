@@ -1,4 +1,4 @@
-const getProducts = require('./getProducts');
-const addToCartCon = require('./addToCart')
+const getProducts = require("./getProducts");
+const addToCartCon = require("./addToCart");
 
-module.exports = {getProducts, addToCartCon};
+module.exports = { getProducts, addToCartCon };

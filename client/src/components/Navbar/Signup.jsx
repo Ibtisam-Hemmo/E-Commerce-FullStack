@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import Axios from "axios";
 import SignUpForm from "./SignUpForm";
 
-const SignUp = () => {
+function SignUp() {
   const [showForm, setShowForm] = useState(false);
   const [userData, setUserData] = useState({
     name: "",
@@ -35,36 +35,41 @@ const SignUp = () => {
   const signUpRef = useClickOutside(() => setShowForm(false));
   const sendData = (e) => {
     e.preventDefault();
-    if(userData.email && userData.confirmPassword && userData.img && userData.name && userData.password){
-      if(userData.confirmPassword === userData.password){
-        Axios.post("/api/v1/users/signup", userData)
-        .then((res) => {
+    if (
+      userData.email &&
+      userData.confirmPassword &&
+      userData.img &&
+      userData.name &&
+      userData.password
+    ) {
+      if (userData.confirmPassword === userData.password) {
+        Axios.post("/api/v1/users/signup", userData).then((res) => {
           if (res.data.msg) {
-          swal({
-            title: '',
-            text: res.data.msg,
-            icon: 'warning',
-            button: 'OK',
-          }) 
+            swal({
+              title: "",
+              text: res.data.msg,
+              icon: "warning",
+              button: "OK",
+            });
           } else {
             window.location.href = "/";
           }
         });
-      } else{
+      } else {
         swal({
-            title: '',
-            text: 'Password and Confirm Password have to be matching',
-            icon: 'warning',
-            button: 'OK',
-          })
+          title: "",
+          text: "Password and Confirm Password have to be matching",
+          icon: "warning",
+          button: "OK",
+        });
       }
     } else {
       swal({
-          title: '',
-          text: 'You have to fill all Inputs to sign Up',
-          icon: 'warning',
-          button: 'OK',
-        })
+        title: "",
+        text: "You have to fill all Inputs to sign Up",
+        icon: "warning",
+        button: "OK",
+      });
     }
   };
   return (
@@ -73,10 +78,14 @@ const SignUp = () => {
         Sign Up
       </button>
       {showForm && (
-       <SignUpForm userData ={userData} setUserData ={setUserData} sendData={sendData}/>
+        <SignUpForm
+          userData={userData}
+          setUserData={setUserData}
+          sendData={sendData}
+        />
       )}
     </li>
   );
-};
+}
 
 export default SignUp;

@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Axios from "axios";
 import SignInForm from "./SignInForm";
+
 function SignIn() {
   const [showForm, setShowForm] = useState(false);
   const [userData, setUserData] = useState({
@@ -32,16 +33,15 @@ function SignIn() {
 
   const sendData = (e) => {
     e.preventDefault();
-    if(userData.email && userData.password){
-      Axios.post("/api/v1/users/signin", userData)
-      .then((res) => {
+    if (userData.email && userData.password) {
+      Axios.post("/api/v1/users/signin", userData).then((res) => {
         if (res.data.msg) {
           swal({
-              title: '',
-              text: res.data.msg,
-              icon: 'warning',
-              button: 'OK',
-            }) 
+            title: "",
+            text: res.data.msg,
+            icon: "warning",
+            button: "OK",
+          });
         } else {
           window.location.href = "/";
         }
@@ -55,7 +55,11 @@ function SignIn() {
         Sign In
       </button>
       {showForm && (
-        <SignInForm userData={userData} setUserData={setUserData} sendData={sendData}/>
+        <SignInForm
+          userData={userData}
+          setUserData={setUserData}
+          sendData={sendData}
+        />
       )}
     </li>
   );
