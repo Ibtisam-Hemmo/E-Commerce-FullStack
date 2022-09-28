@@ -24,7 +24,7 @@ const signin = (req, res, next) => {
             );
           });
         } else {
-          res.json({ msg: "1111111111111111" });
+          res.json({ msg: `${rows[0].name} You Logged in Successfully` });
           // throw new CustomError('Wrong Password', 404);
         }
       });

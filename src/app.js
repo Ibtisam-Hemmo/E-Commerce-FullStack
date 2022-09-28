@@ -25,7 +25,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 app.use((err, req, res, next) => {
-  console.log("Error Middlware:", err);
+  console.log("Error: ", err);
   if (err.status) {
     return res.json({ msg: err.msg, status: err.status });
   }

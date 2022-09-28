@@ -20,9 +20,8 @@ const signup = (req, res, next) => {
     .then((pass) => hash(pass, 10))
     .then((hashing) => addUser(req.body, hashing))
     .then((data) => {
-      const { id } = data.rows[0];
-      const { name } = data.rows[0];
-      return generateToken({ id, username: name });
+      const { id, name } = data.rows[0];
+      return generateToken({ id, name });
     })
     .then((token) =>
       res
