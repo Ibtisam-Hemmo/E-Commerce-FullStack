@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import SignIn from "./Signin";
 import SignUp from "./Signup";
 
-function Navbar() {
+function Navbar({setOffset}) {
   return (
     <header>
       <nav>
@@ -11,12 +11,16 @@ function Navbar() {
         <h1>BIKA</h1>
         <ul className="nav-list">
           <li className="nav-list-item">
-            <NavLink to="/" className="nav-item">
+            <NavLink onClick={()=>{
+              setOffset(0)
+            }} to="/" className="nav-item">
               Home
             </NavLink>
           </li>
           <li className="nav-list-item">
-            <NavLink to="/products" className="nav-item">
+            <NavLink onClick={()=>{
+              setOffset(0)
+            }} to="/products" className="nav-item">
               Products
             </NavLink>
           </li>

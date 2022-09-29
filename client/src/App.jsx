@@ -9,6 +9,7 @@ import Cart from "./components/Cart/Cart";
 import Products from "./components/Products/Products";
 import Footer from "./components/Products/Footer";
 import "./App.css";
+import FilterBarByProduct from "./components/Products/SidebarByProducts";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -31,7 +32,7 @@ function App() {
                 setPageNum={setPageNum}
               />
               <ProductsList products={products} />
-              <Pagination pageNum={pageNum} setOffset={setOffset} />
+              <Pagination pageNum={pageNum}  setOffset={setOffset} />
               <Footer />
             </>
           }
@@ -41,8 +42,14 @@ function App() {
         <Route
           element={
             <>
-              <Products setPageNum={setPageNum} products={products} />
-              <Pagination pageNum={pageNum} setOffset={setOffset} />
+          
+              <FilterBarByProduct   setProducts={setProducts}
+                offset={offset}
+                setOffset={setOffset}
+                pageNum={pageNum}
+                setPageNum={setPageNum}/>
+              <ProductsList products={products} />
+              <Pagination pageNum={pageNum} products={products} setOffset={setOffset} />
             </>
           }
           path="/products"
