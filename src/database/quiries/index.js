@@ -3,6 +3,7 @@ const {
   getProdcutsFromCart,
   deleteSingleProduct,
   updateCount,
+  totalPriceQuery
 } = require("./cart");
 
 const { getFilteredProducts, addToCart } = require("./products");
@@ -15,4 +16,5 @@ module.exports = {
   getProdcutsFromCart,
   deleteSingleProduct,
   updateCount,
+  totalPriceQuery
 };
