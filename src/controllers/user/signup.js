@@ -23,12 +23,6 @@ const signup = (req, res, next) => {
         name: rows[0].name,
       })
     )
-    .then((token) =>
-      res
-        .status(201)
-        .cookie("token", token, { httpOnly: true })
-        .json({ message: "Success", status: 201 })
-    )
     .catch((err) => {
       if (err.details) {
         next(new CustomError(err.details[0].message, 400));
