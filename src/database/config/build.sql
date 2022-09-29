@@ -82,7 +82,7 @@ INSERT INTO products(name, description, img, price, category, user_id) VALUES
 ;
 
 INSERT INTO cart(user_id, product_id, count) VALUES
-(1,2, 1),(2,2,2),(1,3, 7),(1,6,4),(1,5, 9),(1,2,4),(4,6,55),(4,5, 9),(4,2,4);
+(1,2, 1),(2,2,2),(1,3, 7),(1,6,4),(1,5, 9),(1,2,4),(1,6,55),(1,5, 9),(1,2,4);
 
 
 COMMIT;
