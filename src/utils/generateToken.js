@@ -1,14 +1,19 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-multi-assign */
 const { sign } = require("jsonwebtoken");
 require("env2")(".env");
 const CustomError = require("./CustomError");
 
-module.exports = generateToken = (payLoad) =>
-  new Promise((resolve, reject) => {
-    sign(payLoad, process.env.SECRET_KEY, (err, token) => {
+module.exports = generateToken = (res, payload) =>
+  sign(
+    payload,
+    process.env.SECRET_KEY,
+    { algorithm: "HS256" },
+    (err, token) => {
       if (err) {
-        return reject(err);
+        throw new CustomError(err, 401);
+      } else {
+        res.cookie("jwt", token).send({ msg: "token saved" });
       }
-
-      return resolve(token);
-    });
-  });
+    }
+  );

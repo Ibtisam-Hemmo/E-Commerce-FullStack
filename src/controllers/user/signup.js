@@ -9,19 +9,20 @@ const signup = (req, res, next) => {
   signUpSchema
     .validateAsync(req.body)
     .then(() => userByEmail(email))
-    .then((rows) => {
-      if (rows.rowCount) {
+    .then(({ rowCount }) => {
+      if (rowCount) {
         throw new CustomError("Email already Exists", 409);
       }
-      return password;
+      return hash(password, 10);
     })
-    .then((pass) => hash(pass, 10))
-    .then((hashing) => addUser(req.body, hashing))
-    .then((data) => {
-      const { id } = data.rows[0];
-      const { name } = data.rows[0];
-      return generateToken({ id, username: name });
-    })
+    .then((hashedPass) => addUser(req.body, hashedPass))
+    .then(({ rows }) =>
+      generateToken({
+        id: rows[0].id,
+        img: rows[0].img,
+        name: rows[0].name,
+      })
+    )
     .then((token) =>
       res
         .status(201)

@@ -16,11 +16,7 @@ function Landing() {
           Buy Now
         </button>
       </div>
-      <img
-        src="./assets/landin.png"
-        alt="Landing"
-        className="landing-img"
-      />
+      <img src="./assets/landin.png" alt="Landing" className="landing-img" />
     </section>
   );
 }

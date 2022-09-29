@@ -1,5 +1,9 @@
 const { addUser, userByEmail } = require("./user");
-const { getProdcutsFromCart, deleteSingleProduct } = require("./cart");
+const {
+  getProdcutsFromCart,
+  deleteSingleProduct,
+  updateCount,
+} = require("./cart");
 
 const { getFilteredProducts, addToCart } = require("./products");
 
@@ -10,4 +14,5 @@ module.exports = {
   userByEmail,
   getProdcutsFromCart,
   deleteSingleProduct,
+  updateCount,
 };

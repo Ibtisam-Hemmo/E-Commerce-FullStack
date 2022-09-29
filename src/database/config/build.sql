@@ -80,8 +80,9 @@ INSERT INTO products(name, description, img, price, category, user_id) VALUES
 ('Pink Living Room Sofa','Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequaturanimi ut laborum illo quaerat','https://ak1.ostkcdn.com/images/products/22893524/D…5e1b82609e00_1000.jpg?imwidth=480&impolicy=medium',69, 'Sofa',1),
 ('Grey Contemporary Sofa','Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequaturanimi ut laborum illo quaerat','https://ak1.ostkcdn.com/images/products/is/images/…ey-Sectional-Sofa.jpg?imwidth=480&impolicy=medium',75, 'Sofa',1)
 ;
-	
-INSERT INTO cart(user_id, product_id,count) VALUES
-(1,2, 1),(2,2,2);
+
+INSERT INTO cart(user_id, product_id, count) VALUES
+(1,2, 1),(2,2,2),(1,3, 7),(1,6,4),(1,5, 9),(1,2,4),(3,6,55),(3,5, 9),(3,2,4);
+
 
 COMMIT;

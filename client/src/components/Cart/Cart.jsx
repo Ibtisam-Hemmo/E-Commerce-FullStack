@@ -1,21 +1,25 @@
 import React, { useEffect, useState } from "react";
-import Axios from "axios";
 import axios from "axios";
+import CartProduct from "./CartProduct";
 
 function Cart() {
   const [cartProducts, setCartProducts] = useState([]);
   useEffect(() => {
-    Axios("/api/v1/cart/get-product").then((products) =>
-      setCartProducts(products.data)
-    );
+    axios("/api/v1/cart/get-product").then((products) => {
+      setCartProducts(products.data);
+    });
   }, []);
-  const deleteSingleProduct = () => {
-    axios.post("/api/v1/cart/delete-product", { id: 1 });
-  };
+
   return (
     <div>
-      <button onClick={deleteSingleProduct}>delete</button>
-      {console.log(cartProducts)}
+      {cartProducts.map((product) => (
+        <CartProduct
+          product={product}
+          key={product.id}
+          cartProducts={cartProducts}
+          setCartProducts={setCartProducts}
+        />
+      ))}
     </div>
   );
 }
