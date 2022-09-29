@@ -10,16 +10,21 @@ const deleteSingleProduct = (id) => {
   return connection.query(sql, [id]);
 };
 
-const updateCount = ({ newCount, id }) => {
-  console.log("in query: ", newCount, id);
-  return connection.query(
-    `update cart set count = $1 where id = $2 returning *;`,
-    [newCount, id]
+const updateCount = ({ newCount, id }) =>
+  connection.query(`update cart set count = $1 where id = $2 returning *;`, [
+    newCount,
+    id,
+  ]);
+
+const totalPriceQuery = (user_id) =>
+  connection.query(
+    `select sum(price * count) as total_price from products join cart on products.id = cart.product_id where cart.user_id = $1;`,
+    [user_id]
   );
-};
 
 module.exports = {
   getProdcutsFromCart,
   deleteSingleProduct,
   updateCount,
+  totalPriceQuery,
 };

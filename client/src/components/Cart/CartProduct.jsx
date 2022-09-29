@@ -12,6 +12,7 @@ function CartProduct({ product, cartProducts, setCartProducts }) {
   };
 
   const handleUpdateCount = () => {
+    console.log("from handleUpdateCount on save");
     axios.post("/api/v1/cart/update-product", { newCount, id });
   };
 

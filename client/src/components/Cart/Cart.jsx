@@ -4,19 +4,15 @@ import CartProduct from "./CartProduct";
 
 function Cart({ isLogged, setShowForm }) {
   const [cartProducts, setCartProducts] = useState([]);
-
-  // useEffect(() => {
-  //   if(isLogged.msg){
-
-  //     setShowForm(true)
-  //     console.log('showForm')
-  //     console.log(setShowForm)
-  //   }
-  // }, [])
+  const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(() => {
     axios("/api/v1/cart/get-product").then((products) => {
       setCartProducts(products.data);
+    });
+
+    axios("/api/v1/cart/get-totalPrice").then(({ data }) => {
+      setTotalPrice(data);
     });
   }, []);
 
@@ -30,6 +26,10 @@ function Cart({ isLogged, setShowForm }) {
           setCartProducts={setCartProducts}
         />
       ))}
+      <p>Total Price {totalPrice}</p>
+      <p>
+        Total Count {cartProducts.reduce((acc, cur) => (acc += cur.count), 0)}
+      </p>
     </div>
   ) : (
     <h1 className="allowed">Not Allowed</h1>
