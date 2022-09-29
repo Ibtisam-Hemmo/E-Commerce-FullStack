@@ -398,3 +398,14 @@ h1.allowed {
     height: 100vh;
     color: orange;
 }
+
+.price {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 42px;
+    color: #997940;
+    font-weight: bold;
+    font-size: 18px;
+}

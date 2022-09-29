@@ -17,7 +17,7 @@ const signup = (req, res, next) => {
     })
     .then((hashedPass) => addUser(req.body, hashedPass))
     .then(({ rows }) =>
-      generateToken({
+      generateToken(res, {
         id: rows[0].id,
         img: rows[0].img,
         name: rows[0].name,

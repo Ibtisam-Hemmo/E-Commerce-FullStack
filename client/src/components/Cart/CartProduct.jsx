@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import axios from "axios";
 
 function CartProduct({ product, cartProducts, setCartProducts }) {
-  const { id, count } = product;
+  const { name, price, img, id, count} = product;
+
+  // const { id, count } = product;
   const [newCount, setNewCount] = useState(count);
 
   const deleteSingleProduct = () => {
@@ -21,20 +23,44 @@ function CartProduct({ product, cartProducts, setCartProducts }) {
   };
 
   return (
-    <div>
-      <button type="button" onClick={deleteSingleProduct}>
+    // <div>
+      // <button type="button" onClick={deleteSingleProduct}>
+      //   delete
+      // </button>
+      // <button type="button" onClick={() => setNewCount(newCount + 1)}>
+      //   +
+      // </button>
+      // <button type="button" onClick={handleDecrementCount}>
+      //   -
+      // </button>
+      // <button type="button" onClick={handleUpdateCount}>
+      //   save
+      // </button>
+      // <p>COUNT: {newCount}</p>
+    // </div>
+
+    <div className="product-card">
+      <img src={img} alt="product" className="product-img" />
+      <div className="product-card-info">
+        <p className="product-title">{name}</p>
+        <p className="product-price">{price.toFixed(2)}$</p>
+        <div className="product-cards-btns">
+        <button type="button" onClick={deleteSingleProduct} className="btn">
         delete
       </button>
-      <button type="button" onClick={() => setNewCount(newCount + 1)}>
+      <button type="button" onClick={() => setNewCount(newCount + 1)} className="btn">
         +
       </button>
-      <button type="button" onClick={handleDecrementCount}>
+      <p>COUNT: {newCount}</p>
+      <button type="button" onClick={handleDecrementCount} className="btn">
         -
       </button>
-      <button type="button" onClick={handleUpdateCount}>
+      <button type="button" onClick={handleUpdateCount} className="btn">
         save
       </button>
-      <p>COUNT: {newCount}</p>
+      
+        </div>
+      </div>
     </div>
   );
 }

@@ -20,8 +20,6 @@ function App() {
   const [isLogged, setIsLogged] = useState({});
   const [showForm, setShowForm] = useState(false);
 
-  console.log(isLogged);
-
   useEffect(() => {
     axios
       .get("/isLogged")
@@ -49,7 +47,7 @@ function App() {
                 pageNum={pageNum}
                 setPageNum={setPageNum}
               />
-              <ProductsList products={products} />
+              <ProductsList products={products} user_id={isLogged}/>
               <Pagination pageNum={pageNum} setOffset={setOffset} />
               <Footer />
             </>
@@ -67,7 +65,7 @@ function App() {
                 pageNum={pageNum}
                 setPageNum={setPageNum}
               />
-              <ProductsList products={products} />
+              <ProductsList products={products} user_id={isLogged}/>
               <Pagination
                 pageNum={pageNum}
                 products={products}
