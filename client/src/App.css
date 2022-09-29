@@ -102,7 +102,6 @@ h1.landing-headline {
 p.landing-para {
     font-size: 18px;
     max-width: 500px;
-    color: var(--grey);
 }
 
 button.btn.buy-btn {
