@@ -86,6 +86,3 @@ INSERT INTO cart(user_id, product_id, count) VALUES
 
 
 COMMIT;
-
-INSERT INTO cart(user_id, product_id, count) VALUES
-(4,6,55),(4,5, 9),(4,2,4);

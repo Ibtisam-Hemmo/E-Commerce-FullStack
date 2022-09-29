@@ -2,8 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import Axios from "axios";
 import SignInForm from "./SignInForm";
 
-function SignIn() {
-  const [showForm, setShowForm] = useState(false);
+function SignIn({ showForm, setShowForm }) {
   const [userData, setUserData] = useState({
     email: "",
     password: "",

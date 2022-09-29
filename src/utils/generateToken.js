@@ -13,9 +13,7 @@ module.exports = generateToken = (res, payload) =>
       if (err) {
         throw new CustomError(err, 401);
       } else {
-        res
-          .cookie("token", token, { httpOnly: true })
-          .json({ msg: "Success", status: 201 });
+        res.cookie("jwt", token).send({ message: "token saved" });
       }
     }
   );

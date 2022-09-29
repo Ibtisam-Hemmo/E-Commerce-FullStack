@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import CartProduct from "./CartProduct";
 
-function Cart() {
+function Cart({ isLogged, setShowForm }) {
   const [cartProducts, setCartProducts] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
 
@@ -12,16 +12,11 @@ function Cart() {
     });
 
     axios("/api/v1/cart/get-totalPrice").then(({ data }) => {
-      console.log(data);
       setTotalPrice(data);
     });
-
   }, []);
 
-
-
-
-  return (
+  return !isLogged.msg ? (
     <div>
       {cartProducts.map((product) => (
         <CartProduct
@@ -32,9 +27,12 @@ function Cart() {
         />
       ))}
       <p>Total Price {totalPrice}</p>
-      <p>Total Count {cartProducts.reduce((acc, cur) => acc += cur.count, 0)}</p>
-      
+      <p>
+        Total Count {cartProducts.reduce((acc, cur) => (acc += cur.count), 0)}
+      </p>
     </div>
+  ) : (
+    <h1 className="allowed">Not Allowed</h1>
   );
 }
 

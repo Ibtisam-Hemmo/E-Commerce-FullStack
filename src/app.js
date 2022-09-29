@@ -27,6 +27,8 @@ if (process.env.NODE_ENV === "production") {
 app.use((err, req, res, next) => {
   console.log("Error: ", err);
   if (err.status) {
+    // return res.status(err.status).json({ msg: err.msg, status: err.status });
+
     return res.json({ msg: err.msg, status: err.status });
   }
   return res.status(500).send("Server Error: ", err);
