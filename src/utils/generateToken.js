@@ -13,7 +13,7 @@ module.exports = generateToken = (res, payload) =>
       if (err) {
         throw new CustomError(err, 401);
       } else {
-        res.cookie("jwt", token).send({ msg: "token saved" });
+        res.cookie("jwt", token).send({ message: "token saved" });
       }
     }
   );

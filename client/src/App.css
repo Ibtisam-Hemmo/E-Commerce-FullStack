@@ -115,7 +115,7 @@ button.btn.buy-btn {
 
 /* Start Styling Products Section */
 section.products-list {
-    padding: 7% 4%;
+    padding:11% 4%;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -388,4 +388,13 @@ button:hover{
 }
 .filters input:first-child{
     padding: 5px;
+}
+
+h1.allowed {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    color: orange;
 }
