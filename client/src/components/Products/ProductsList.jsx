@@ -6,7 +6,7 @@ function ProductsList({ products, user_id }) {
     <section className="products-list">
       {products.length !== 0 ? (
         products.map((product) => (
-          <ProductCard product={product} key={product.id} user_id={user_id}/>
+          <ProductCard product={product} key={product.id} user_id={user_id} />
         ))
       ) : (
         <h1>No data</h1>

@@ -47,7 +47,7 @@ function App() {
                 pageNum={pageNum}
                 setPageNum={setPageNum}
               />
-              <ProductsList products={products} user_id={isLogged}/>
+              <ProductsList products={products} user_id={isLogged} />
               <Pagination pageNum={pageNum} setOffset={setOffset} />
               <Footer />
             </>
@@ -65,7 +65,7 @@ function App() {
                 pageNum={pageNum}
                 setPageNum={setPageNum}
               />
-              <ProductsList products={products} user_id={isLogged}/>
+              <ProductsList products={products} user_id={isLogged} />
               <Pagination
                 pageNum={pageNum}
                 products={products}
