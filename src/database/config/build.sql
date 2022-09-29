@@ -32,16 +32,6 @@ CREATE TABLE cart(
 
 INSERT INTO products(name, description, img, price, category, user_id) VALUES
 ('Midtown Dining Set','Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequaturanimi ut laborum illo quaerat','https://ak1.ostkcdn.com/images/products/30884162/Tara-Pantry-23.75-W-x-15-D-x-67.75-H-13ee0613-545d-4f03-807f-0e5cd67d5da5_1000.jpg',100, 'Kitchen',1),
-
-('Space Saving Shapes','Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequaturanimi ut laborum illo quaerat','https://ak1.ostkcdn.com/wp-content/uploads/2019/03/031519-Small-Kitchen-and-Dining-Tables-and-Chairs-Small-Spaces-Tall-Tables.jpg',100, 'Kitchen',1),
-
-('gress chair','Data Chair is a system of chairs that can be assembled on different base typologies: sled, four legs, central support with or without wheels. Because of the Data Chair many configurations, its solid build and its lightweight appearance, it is a project with appeal unrivaled for furnishing collective spaces, public spaces, work places and homes.',
-'https://m.media-amazon.com/images/I/91C6rnYVi-L._AC_SL1500_.jpg', 70,'chair',1),
-
-('Taypy chair','With a serene, light and subtle character, the Stamp collection brings an air of differentiation, authenticity and originality to architectural and interior design projects.The collection is a complete family of upholstered seats, composed of chairs, armchairs and stools that blend in naturally in public, professional and residential surroundings. Clean-lined, contemporary and timeless pieces that infuse a sophisticated mood in the places they inhabit. Creating visual levity. Its elegant and austere outline embraces an elaborate interior with a soft upholstery that invites the body to relax and put the mind to work.',
-'https://www.cultfurniture.com/images/deluxe-high-back-office-chair-vintage-tan-p5152-2728553_image.jpg',70,'chiar',1),
-
-('Acato chair','The new Billa Chair is a spontaneous evolution of the lounge model. The same materials, with the Nordic atmosphere given by the warmth of beech plywood combined with the elegance of the elliptical tube, now enhance new proportions to complete a collection both original and trendy.','https://d1k47ujo4hlhfb.cloudfront.net/catalog/product/a/r/arc_visitor.jpg',20,'chair',1),
 ('Ranges & Ovens','Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequaturanimi ut laborum illo quaerat','https://ak1.ostkcdn.com/img/mxc/03232020-gnp-kitchendining-PopCat_7.jpg',90, 'Kitchen',1),
 ('Cookware','Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequaturanimi ut laborum illo quaerat','https://ak1.ostkcdn.com/img/mxc/03242022_SPRING2022_KITCHEN_PopCat_3.jpg',41, 'Kitchen',1),
 ('Table Linens & Decor - Overstock','Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequaturanimi ut laborum illo quaerat','https://ak1.ostkcdn.com/img/mxc/12202021_WINTER2022_KITCHEN_PopCat_7_TableLinensandDecor.jpg',50, 'Kitchen',1),
@@ -73,6 +63,15 @@ INSERT INTO products(name, description, img, price, category, user_id) VALUES
 ('Wood Chair','Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequaturanimi ut laborum illo quaerat','https://ak1.ostkcdn.com/images/products/is/images/…opher-Knight-Home.jpg?imwidth=480&impolicy=medium',50, 'Chair',1),
 ('Bag Chair','Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequaturanimi ut laborum illo quaerat','https://ak1.ostkcdn.com/images/products/is/images/…C-Multiple-Colors.jpg?imwidth=480&impolicy=medium',65, 'Chair',1),
 
+('Space Saving Shapes','Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequaturanimi ut laborum illo quaerat','https://ak1.ostkcdn.com/wp-content/uploads/2019/03/031519-Small-Kitchen-and-Dining-Tables-and-Chairs-Small-Spaces-Tall-Tables.jpg',100, 'Kitchen',1),
+
+('gress chair','Data Chair is a system of chairs that can be assembled on different base typologies: sled, four legs, central support with or without wheels. Because of the Data Chair many configurations, its solid build and its lightweight appearance, it is a project with appeal unrivaled for furnishing collective spaces, public spaces, work places and homes.',
+'https://m.media-amazon.com/images/I/91C6rnYVi-L._AC_SL1500_.jpg', 70,'chair',1),
+
+('Taypy chair','With a serene, light and subtle character, the Stamp collection brings an air of differentiation, authenticity and originality to architectural and interior design projects.The collection is a complete family of upholstered seats, composed of chairs, armchairs and stools that blend in naturally in public, professional and residential surroundings. Clean-lined, contemporary and timeless pieces that infuse a sophisticated mood in the places they inhabit. Creating visual levity. Its elegant and austere outline embraces an elaborate interior with a soft upholstery that invites the body to relax and put the mind to work.',
+'https://www.cultfurniture.com/images/deluxe-high-back-office-chair-vintage-tan-p5152-2728553_image.jpg',70,'chiar',1),
+
+('Acato chair','The new Billa Chair is a spontaneous evolution of the lounge model. The same materials, with the Nordic atmosphere given by the warmth of beech plywood combined with the elegance of the elliptical tube, now enhance new proportions to complete a collection both original and trendy.','https://d1k47ujo4hlhfb.cloudfront.net/catalog/product/a/r/arc_visitor.jpg',20,'chair',1),
 ('Wood Home Deak','Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequaturanimi ut laborum illo quaerat','https://ak1.ostkcdn.com/images/products/is/images/…Table-Workstation.jpg?imwidth=480&impolicy=medium',79, 'table',1),
 ('White X-frame Computer Desk','Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequaturanimi ut laborum illo quaerat','https://ak1.ostkcdn.com/images/products/is/images/…sk-with-Glass-Top.jpg?imwidth=480&impolicy=medium',65, 'table',1),
 ('Home Office Desk','Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequaturanimi ut laborum illo quaerat','https://ak1.ostkcdn.com/images/products/is/images/…udy-Writing-Table.jpg?imwidth=480&impolicy=medium',53, 'table',1),

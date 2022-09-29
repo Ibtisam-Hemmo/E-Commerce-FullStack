@@ -7,8 +7,7 @@ function Cart({ isLogged, setShowForm }) {
   const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(() => {
-    axios.get("/api/v1/cart/get-product")
-    .then((products) => {
+    axios.get("/api/v1/cart/get-product").then((products) => {
       setCartProducts(products.data);
     });
 
@@ -19,24 +18,22 @@ function Cart({ isLogged, setShowForm }) {
 
   return !isLogged.msg ? (
     <>
-
-    <section className="products-list">
-      {cartProducts.map((product) => (
-        <CartProduct
-          product={product}
-          key={product.id}
-          cartProducts={cartProducts}
-          setCartProducts={setCartProducts}
-        />
-      ))}
-    </section>
-    <div className="price">
-
-    <p>Total Price {totalPrice}</p>
-      <p>
-        Total Count {cartProducts.reduce((acc, cur) => (acc += cur.count), 0)}
-      </p>
-    </div>
+      <section className="products-list">
+        {cartProducts.map((product) => (
+          <CartProduct
+            product={product}
+            key={product.id}
+            cartProducts={cartProducts}
+            setCartProducts={setCartProducts}
+          />
+        ))}
+      </section>
+      <div className="price">
+        <p>Total Price {totalPrice}</p>
+        <p>
+          Total Count {cartProducts.reduce((acc, cur) => (acc += cur.count), 0)}
+        </p>
+      </div>
     </>
   ) : (
     <h1 className="allowed">Not Allowed</h1>

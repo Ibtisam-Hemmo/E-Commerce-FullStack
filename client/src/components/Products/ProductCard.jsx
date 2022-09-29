@@ -2,8 +2,8 @@ import React, { useState, useRef, useEffect } from "react";
 import axios from "axios";
 import ProductInfo from "./ProductInfo";
 
-function ProductCard({ product , user_id}) {
-  console.log(user_id.id)
+function ProductCard({ product, user_id }) {
+  console.log(user_id.id);
   const { name, price, img, id } = product;
   const [showProductInfo, setShowproductInfo] = useState(false);
 
@@ -12,7 +12,7 @@ function ProductCard({ product , user_id}) {
   };
   const addToCart = () => {
     axios
-      .post("/addToCart", { product_id: id,  user_id: user_id.id})
+      .post("/addToCart", { product_id: id, user_id: user_id.id })
       .then((data) => console.log(data));
   };
 

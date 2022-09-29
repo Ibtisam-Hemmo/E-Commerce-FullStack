@@ -13,10 +13,11 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react", "prettier"
     ],
     "rules": {
-        "prettier/prettier": "error"
+        "prettier/prettier": "error",
+        "react/prop-types":0
     },
     "root": true
 }
