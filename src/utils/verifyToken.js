@@ -5,13 +5,12 @@ require("env2")(".env");
 
 module.exports = verifyToken = (req, res, next) => {
   try {
-    const existedToken = req.cookies.token;
+    const existedToken = req.cookies.jwt;
     if (!existedToken) throw new CustomError("You are not authorized!", 400);
     verify(existedToken, process.env.SECRET_KEY, (err, decoded) => {
       if (err) {
         throw new CustomError("Token is being manipulated!", 400);
       } else {
-        console.log("Verified!:", decoded);
         req.user = decoded;
         next();
       }
